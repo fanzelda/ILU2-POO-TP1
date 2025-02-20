@@ -159,13 +159,24 @@ public class Village {
 		return chaine.toString();
 	}
 	
-//	public Etal rechercherEtal(Gaulois vendeur) {
-//		
-//	}
+	public Etal rechercherEtal(Gaulois vendeur) {
+		return marche.trouverVendeur(vendeur);
+	}
+	
+	public String partirVendeur(Gaulois vendeur) {
+		StringBuilder chaine = new StringBuilder();
+		Etal etalPartir = marche.trouverVendeur(vendeur);
+		chaine.append(etalPartir.libererEtal());
+		return chaine.toString();
+	}
 	
 	
-//	public String afficherMarche() {
-//		
-//	}
+	public String afficherMarche() {
+		StringBuilder chaine = new StringBuilder();
+		chaine.append("Le marché du village \"" + nom + "\" possède plusieurs étals :");
+		chaine.append(marche.afficherMarche());
+		
+		return chaine.toString();
+	}
 	
 }
